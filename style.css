@@ -1,0 +1,116 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+body{
+    min-height: 100vh;
+    background-color: rgb(227, 237, 247);
+}
+h1,h2{
+    /* margin: auto; */
+    text-align: center;
+}
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.accordion{
+    /* padding: 25px; */
+    width: 70%;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgb(162, 228, 236);
+
+}
+
+.accordionItem{
+    position: relative;
+    background-color: rgb(255, 245, 231);
+}
+
+.label{
+    background-color: rgb(120, 252, 252);
+    padding: 10px;
+    font-size: 1.25rem;
+}
+.label::before{
+    content: "+";
+    position: absolute;
+    right: 20px
+}
+
+.content{
+    transition: 0.4s;
+    height: 0;
+    overflow: hidden;
+}
+p{
+    margin:0
+}
+
+.accordionItem.active .content{
+    height: 100px;
+    padding: 25px;
+}
+
+.accordionItem.active .label::before{
+    content: "-";
+}
+
+
+
+
+/*SECOND ACCORDION*/
+.accordion2{
+    padding: 25px;
+    width: 70%;
+}
+
+.accordion2 .accordionItem2{
+    position: relative;
+    list-style: none;
+    margin: 20px;
+    padding:10px;
+    border-radius: 8px;
+    background-color: #e3edf7;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgb(255, 255, 255);
+}
+
+.label2 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.accordionItem2 .label2::before{
+    content: "+";
+    position: absolute;
+    right: 20px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.content2{
+    transition: 0.4s;
+    overflow: hidden;
+    max-height: 0;
+
+}
+input[type="radio"]:checked + .label2 + .content2{
+    max-height: 150px;
+} 
+
+input[type="radio"]:checked + .label2::before{
+    content: "-";
+}
